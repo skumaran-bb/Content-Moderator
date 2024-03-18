@@ -75,15 +75,11 @@ app.post('/tensorflow', (req, res) => {
             for (let index = 0; index < predictions.length; index++) {
                 const prediction = predictions[index];
 
-                console.log(prediction.label)
-                console.log(prediction.results)
-
                 prediction.results.forEach(e => {
                     
                     if(e.match){
                         result = result + ' ' + `${prediction.label} - ${(e.probabilities[0]*100).toFixed(2)}% | ${(e.probabilities[1]*100).toFixed(2)}%`
-                        console.log(`${prediction.label} - ${(e.probabilities[0]*100).toFixed(2)}% | ${(e.probabilities[1]*100).toFixed(2)}%`)
-                        console.log(result)
+                        
                         resultArray.push(
                             {
                                 "label": prediction.label,
