@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "8774708e-1b5d-419c-97cd-eddcd4f2e073",
+		"name": "Content Moderator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "192363"
+	},
+	"item": [
+		{
+			"name": "Tensorflow Offensive Lang",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"What the fuck you're talking about? You're such a stupid fellow. I will kill you.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3500/tensorflow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"tensorflow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tensorflow Insult",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"You are a tiny, little baby poop\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3500/tensorflow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"tensorflow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tensorflow Sexual",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"You are looking so sexy, can we go for a dinner tonight?\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3500/tensorflow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"tensorflow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sexual",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"You are looking so sexy, can we go for a dinner tonight?\",\n    \"languageCode\": \"en\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3500/aws",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"aws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Scolding",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"You are the moron, what a stupid idea you are bringing in here\",\n    \"langaugeCode\": \"en\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3500/aws",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"aws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gun and Kill",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"You can get gun from the corner shop on the street to kill your friend\",\n    \"languageCode\":\"en\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3500/aws",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"aws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insult Spanish",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"Eres una pequeña, pequeña caca de bebé\",\n    \"languageCode\": \"es\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3500/aws",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"aws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insult English",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "2ed42903f57a4f82a1c907d930c0c019",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"You are a tiny, little baby poop\",\n    \"languageCode\": \"en\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3500/aws",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"aws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Secrets",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "2ed42903f57a4f82a1c907d930c0c019",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3500/secrets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"secrets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Secrets by API Key",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3500/secret",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"secret"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
