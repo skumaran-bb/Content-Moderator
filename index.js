@@ -10,7 +10,7 @@ var global = require('./global')
 const helpers = require('./helpers')
 const languageCodeValidator = require('./languageCodes')
 const { ComprehendClient, DetectToxicContentCommand, DetectDominantLanguageCommand } = require("@aws-sdk/client-comprehend"); // CommonJS import
-
+const CronJob = require('cron').CronJob
 
 //References:
 //https://storage.googleapis.com/tfjs-models/demos/toxicity/index.html
@@ -27,8 +27,25 @@ app.use(express.json())
 app.use(auth.ValidateUser)
 //app.all('/*', auth)
 
+
+//https://github.com/kelektiv/node-cron/tree/main/examples
+// Examples for CRON job schedules
+const job = CronJob.from({
+	cronTime: '0 */60 * * * *', // Every 1 hr
+    //cronTime: '* * * * * *',
+	onTick: function () {
+		awsSecrets.GetSecrets().then((s)=>{    
+            global.Secrets = JSON.parse(s)
+            console.log(`${new Date()} - Secrets have been refreshed`)
+        })
+	},
+	start: false
+	//timeZone: 'America/Los_Angeles' // optional
+});
+
 awsSecrets.GetSecrets().then((s)=>{    
     global.Secrets = JSON.parse(s)
+    job.start()
 })
 
 app.get('/secrets', (req, res) => {
@@ -57,6 +74,12 @@ app.get('/secret', async (req, res) => {
 
 
 app.post('/tensorflow', (req, res) => {
+
+    if(!req.body.content){
+        res.status(400).send("Content is required")
+        return
+    }
+
     const content = req.body.content
     var result=''
     var resultArray = []
@@ -116,6 +139,11 @@ app.post('/tensorflow', (req, res) => {
 app.post("/aws", async (req, res) => {
 
     try{
+        if(!req.body.content){
+            res.status(400).send("Content is required")
+            return
+        }
+
         const comprehendClient = new ComprehendClient();
         var userContent = req.body.content
         const inputLanguageCode = req.body.languageCode
