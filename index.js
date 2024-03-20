@@ -144,7 +144,7 @@ app.post("/aws", async (req, res) => {
             return
         }
 
-        const comprehendClient = new ComprehendClient();
+        const comprehendClient = new ComprehendClient({region: 'us-west-2'});
         var userContent = req.body.content
         const inputLanguageCode = req.body.languageCode
 
@@ -173,7 +173,7 @@ app.post("/aws", async (req, res) => {
         if(highestScoredLanguageCode != "en"){
             // Perform translation from given language to English
             const { TranslateClient, TranslateTextCommand } = require("@aws-sdk/client-translate"); // CommonJS import
-            const translateClient = new TranslateClient();
+            const translateClient = new TranslateClient({region: 'us-west-2'});
             const translateInput = { 
                                         Text: userContent, // required
                                         SourceLanguageCode: highestScoredLanguageCode, // required
