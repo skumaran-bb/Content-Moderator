@@ -56,7 +56,7 @@ app.get('/secrets', (req, res) => {
     res.end()
 })
 
-app.get('/secret', async (req, res) => {
+app.get('/clientName', async (req, res) => {
     const apiKey = req.headers['x-api-key']
 
     if(apiKey){
@@ -205,7 +205,14 @@ app.post("/aws", async (req, res) => {
 
         const highestScoredItems = await helpers.FindHighestScoredItems(response.ResultList[0].Labels, threshold)
         
-        const result = "Your content is moderated by " + highestScoredItems.map(item => item.Name).join(", ")
+        var result
+
+        if(highestScoredItems.length == 0){
+            result = "Content is not moderated"
+        }
+        else{
+            result = "Your content is moderated by " + highestScoredItems.map(item => item.Name).join(", ")
+        }
 
         res.json({
             "content": userContent,

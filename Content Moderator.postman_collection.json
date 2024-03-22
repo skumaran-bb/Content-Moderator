@@ -7,19 +7,20 @@
 	},
 	"item": [
 		{
-			"name": "Tensorflow Offensive Lang",
+			"name": "Without API Key",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "x-api-key",
 						"value": "3e2111db6a0c4c3583c90755a220e110",
-						"type": "text"
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"content\":\"What the fuck you're talking about? You're such a stupid fellow. I will kill you.\"\n}",
+					"raw": "{\n    \"content\":\"You can get gun from the corner shop on the street to kill your friend\",\n    \"languageCode\":\"en\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -27,23 +28,21 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3500/tensorflow",
-					"protocol": "http",
+					"raw": "{{URL}}/aws",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "3500",
 					"path": [
-						"tensorflow"
+						"aws"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Tensorflow Insult",
+			"name": "Get Client Name",
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [
 					{
 						"key": "x-api-key",
@@ -51,31 +50,20 @@
 						"type": "text"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"content\":\"You are a tiny, little baby poop\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:3500/tensorflow",
-					"protocol": "http",
+					"raw": "{{URL}}/clientName",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "3500",
 					"path": [
-						"tensorflow"
+						"clientName"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Tensorflow Sexual",
+			"name": "Wrong Lang Code",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -87,7 +75,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"content\":\"You are looking so sexy, can we go for a dinner tonight?\"\n}",
+					"raw": "{\n    \"content\":\"Te ves tan sexy, ¿podemos ir a cenar esta noche?\",\n    \"languageCode\": \"en\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -95,14 +83,44 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3500/tensorflow",
-					"protocol": "http",
+					"raw": "{{URL}}/aws",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "3500",
 					"path": [
-						"tensorflow"
+						"aws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Not Moderated",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"This is the beautiful day, enjoy\",\n    \"languageCode\":\"en\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/aws",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"aws"
 					]
 				}
 			},
@@ -129,12 +147,106 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3500/aws",
-					"protocol": "http",
+					"raw": "{{URL}}/aws",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "3500",
+					"path": [
+						"aws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Without Language Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"You are looking so sexy, can we go for a dinner tonight?\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/aws",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"aws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detect and Translate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"Tu as l'air si sexy, pouvons-nous aller dîner ce soir ?\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/aws",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"aws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tamil Violence Threat",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"உனக்கு அறிவே இல்லையா, நான் உன்னை கொன்றுவிடுவேன்.\",\n    \"languageCode\":\"ta\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/aws",
+					"host": [
+						"{{URL}}"
+					],
 					"path": [
 						"aws"
 					]
@@ -163,12 +275,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3500/aws",
-					"protocol": "http",
+					"raw": "{{URL}}/aws",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "3500",
 					"path": [
 						"aws"
 					]
@@ -197,12 +307,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3500/aws",
-					"protocol": "http",
+					"raw": "{{URL}}/aws",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "3500",
 					"path": [
 						"aws"
 					]
@@ -231,12 +339,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3500/aws",
-					"protocol": "http",
+					"raw": "{{URL}}/aws",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "3500",
 					"path": [
 						"aws"
 					]
@@ -251,7 +357,7 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "2ed42903f57a4f82a1c907d930c0c019",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
 						"type": "text"
 					}
 				],
@@ -265,14 +371,108 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3500/aws",
-					"protocol": "http",
+					"raw": "{{URL}}/aws",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "3500",
 					"path": [
 						"aws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tensorflow Offensive Lang",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"What the fuck you're talking about? You're such a stupid fellow. I will kill you.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/tensorflow",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"tensorflow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tensorflow Insult",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"You are a tiny, little baby poop\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/tensorflow",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"tensorflow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tensorflow Sexual",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "3e2111db6a0c4c3583c90755a220e110",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"You are looking so sexy, can we go for a dinner tonight?\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/tensorflow",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"tensorflow"
 					]
 				}
 			},
@@ -285,44 +485,17 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "2ed42903f57a4f82a1c907d930c0c019",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:3500/secrets",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3500",
-					"path": [
-						"secrets"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Secrets by API Key",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "x-api-key",
 						"value": "3e2111db6a0c4c3583c90755a220e110",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3500/secret",
-					"protocol": "http",
+					"raw": "{{URL}}/secrets",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "3500",
 					"path": [
-						"secret"
+						"secrets"
 					]
 				}
 			},
